@@ -1,0 +1,11 @@
+configuration {
+  modi: "drun,window,combi";
+  font: "hack 10";
+  show-icons: true;
+  combi-modi: "drun,window,ssh";
+  sidebar-mode: true;
+  kb-mode-previous: "Alt+i";
+  kb-mode-next: "Alt+o";
+}
+//@theme "/home/shuntaide/.config/rofi/themes/launchpad.rasi"
+@theme "/home/shuntaide/.config/rofi/themes/nord.rasi"
