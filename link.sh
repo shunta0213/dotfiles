@@ -13,7 +13,8 @@ create_symlinks() {
 		fi
 
 		# create backup of the whole .config folder
-		command cp -r .config{,.bak}
+		rm -rf ${HOME}/.config.bak
+		command cp -r ${HOME}/.config{,.bak}
 
 		if [ ! -d "$target_dir" ]; then
 		mkdir -p "$target_dir"
