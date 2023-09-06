@@ -1,29 +1,48 @@
 #!/bin/sh
+
 set -ue
 
-link_to_homedir() {
-	command echo "backup old dotfiles..."
-	if [ ! -d "$HOME/dotfiles.bak" ];then
-		command echo "$HOME/.dotbackup not found. Auto Make it"
-    		command mkdir "$HOME/dotfiles.bak"
-  	fi
 
-	for f in ${HOME}/dotfiles/.??*; do
-		local fname=`basename ${f}`
+create_symlinks() {
+		local src_dir="$HOME/dotfiles"
+		local target_dir="$HOME"
+
+		if [ ! -d "$src_dir" ]; then
+				echo "Source directory $src_dir does not exist."
+				return 1
+		fi
+
+		# create backup of the whole .config folder
+		command cp -r .config{,.bak}
+
+		if [ ! -d "$target_dir" ]; then
+		mkdir -p "$target_dir"
+		fi
+
+		for item in $(ls -A ${src_dir}); do
+				local src="$src_dir/$item"
+				local target="$target_dir/$item"
+
+		# skip for not dotfiles
+		[ ${item} == "README.md" -o ${item} == "link.sh" ] && continue
 
 		# skip for git
-      		[[ ${fname} == ".git" ]] && continue
+		[ `basename ${src}` == ".git" ] && continue
 
-		# make backup
-      		if [[ -e "${HOME}/${fname}" ]];then
-			command echo making buckup ${HOME}/${fname}
-        		command mv "${HOME}/${fname}" "${HOME}/dotfiles.bak"
-      		fi
-
-      		command ln -snf $f $HOME
-    	done
+				if [ -L "$target" ]; then
+						echo "Skipping $item, target already exists."
+				else
+			if [ -d "$src" ]; then
+				for sub_item in $(ls -A "$src"); do
+					ln -snf "$src"/${sub_item} "$target"
+					echo "Create symbolic link for sub ${sub_item}"
+				done
+			else
+				ln -snf "$src" "$target"
+						echo "Created symlink for $item."
+			fi
+				fi
+		done
 }
 
-
-link_to_homedir
-command echo -e "\e[1;36m Install completed!!!! \e[m"
+create_symlinks
