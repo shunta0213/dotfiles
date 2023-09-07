@@ -3,8 +3,8 @@ local options = {
 	shiftwidth = 2,
 	number = true,
 	relativenumber = true,
-	fileencoding = 'utf-8',
-	clipboard = 'unnamedplus',
+	fileencoding = "utf-8",
+	clipboard = "unnamedplus",
 	showmode = false,
 }
 

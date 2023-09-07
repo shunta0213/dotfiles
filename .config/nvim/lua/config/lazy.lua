@@ -1,22 +1,24 @@
-require('lazy').setup({
-  spec = {
-		{ import = 'plugins.core' }
+require("lazy").setup({
+	spec = {
+		{ import = "plugins.core" },
+		{ import = "plugins.lsp" },
+		{ import = "plugins.colorscheme" },
 	},
-  defaults = { lazy = true, version = '*' },
-  install = {},
-  checker = { enabled = true },
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        'gzip',
-        'matchit',
-        'matchparen',
-        'netrwPlugin',
-        'tarPlugin',
-        'tohtml',
-        'tutor',
-        'zipPlugin',
-      },
-    },
-  },
+	defaults = { lazy = true, version = "*" },
+	install = {},
+	checker = { enabled = true },
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"matchit",
+				"matchparen",
+				"netrwPlugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	},
 })
