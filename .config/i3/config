@@ -18,6 +18,8 @@ set $mod Mod1
 font pango:DejaVu Sans Mono 8
 # nitrogen
 exec_always --no-startup-id nitrogen --restore
+# picom
+exec_always --no-startup-id picom -b
 # Remove pixel bar
 default_border pixel 1
 default_floating_border pixel 1
