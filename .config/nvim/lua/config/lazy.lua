@@ -4,7 +4,7 @@ require("lazy").setup({
 		{ import = "plugins.lsp" },
 		{ import = "plugins.colorscheme" },
 	},
-	defaults = { lazy = true, version = "*" },
+	defaults = { lazy = true },
 	install = {},
 	checker = { enabled = true },
 	performance = {

@@ -1,6 +1,8 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	version = false,
 	build = ":TSUpdate",
+	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		init = function()
@@ -15,8 +17,17 @@ return {
 		ensure_installed = {
 			"bash",
 			"vim",
-			"",
 			"lua",
+			"japascript",
+			"json",
+			"typescript",
+			"tsx",
+			"go",
+			"dart",
+			"prisma",
+			"python",
+			"regex",
+			"yaml",
 		},
 	},
 }

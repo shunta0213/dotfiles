@@ -6,6 +6,10 @@ local options = {
 	fileencoding = "utf-8",
 	clipboard = "unnamedplus",
 	showmode = false,
+	wrap = false,
+	autoindent = true,
+	smartindent = true,
+	expandtab = true,
 }
 
 for option, value in pairs(options) do
