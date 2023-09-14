@@ -20,6 +20,9 @@ font pango:DejaVu Sans Mono 8
 exec_always --no-startup-id nitrogen --restore
 # picom
 exec_always --no-startup-id picom -b
+# clipboard
+exec --no-startup-id greenclip daemon>>/dev/null
+bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
 # Remove pixel bar
 default_border pixel 1
 default_floating_border pixel 1
