@@ -14,3 +14,6 @@ RPROMPT="%F{3}%n[%T]%f"
 
 # aliases
 [ -f "${HOME}/.aliases" ] && source "${HOME}/.aliases"
+
+# nvm
+[ -f "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
