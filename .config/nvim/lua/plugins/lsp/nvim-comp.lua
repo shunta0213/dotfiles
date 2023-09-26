@@ -16,7 +16,7 @@ return {
 			completion = { completeopt = "menu,menuone,noinsert" },
 			snippet = {
 				expand = function(args)
-					require("luanip").lsp_expand(args.body)
+					require("luasnip").lsp_expand(args.body)
 				end,
 			},
 			-- keymappings

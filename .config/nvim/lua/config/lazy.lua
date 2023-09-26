@@ -3,6 +3,7 @@ require("lazy").setup({
 		{ import = "plugins.core" },
 		{ import = "plugins.lsp" },
 		{ import = "plugins.colorscheme" },
+		{ import = "plugins.editor" },
 	},
 	defaults = { lazy = true },
 	install = {},
