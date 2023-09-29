@@ -24,8 +24,8 @@ create_symlinks() {
 			local src="$src_dir/$item"
 			local target="$target_dir/$item"
 
-			# skip for not dotfiles
-			[${item} == "README.md" -o ${item} == "link.sh" ] && continue
+			# skip not dotfiles
+			[ ${item} == "README.md" -o ${item} == "link.sh" ] && continue
 
 			# skip for git
 			[ `basename ${src}` == ".git" ] && continue
@@ -36,11 +36,9 @@ create_symlinks() {
 				if [ -d "$src" ]; then
 					for sub_item in $(ls -A "$src"); do
 						ln -snf "$src"/${sub_item} "$target"
-						echo "Create symbolic link for sub ${sub_item}"
 					done
 				else
 					ln -snf "$src" "$target"
-					echo "Created symlink for $item."
 				fi
 			fi
 		done
