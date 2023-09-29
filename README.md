@@ -1,4 +1,4 @@
-# My dotfiles for Arch + i3vm
+# My dotfiles
 
 ## Install
 Create a .config backup folder named .config.bak and symbolic links.
