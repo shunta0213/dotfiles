@@ -20,6 +20,8 @@ font pango:DejaVu Sans Mono 8
 exec_always --no-startup-id nitrogen --restore
 # picom
 exec_always --no-startup-id picom -b
+# xmodmap
+exec_always --no-startup-id xmodmap ~/.Xmodmap
 # clipboard
 exec --no-startup-id greenclip daemon>>/dev/null
 bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
@@ -27,7 +29,7 @@ bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show
 default_border pixel 1
 default_floating_border pixel 1
 # Application Manager
-bindsym $mod+d exec --no-startup-id rofi -show run -modes drun
+bindsym $mod+space exec --no-startup-id rofi -show run -modes drun
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
 # change focus
@@ -140,7 +142,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+t focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent

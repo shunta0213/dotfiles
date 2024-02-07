@@ -17,3 +17,6 @@ RPROMPT="%F{3}%n[%T]%f"
 
 # nvm
 [ -f "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
+
+# Go bin
+export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
