@@ -19,11 +19,12 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		"MunifTanjim/nui.nvim",
 	},
-	conifg = function()
-		require("neo-tree").setup({
-			window = {
-				width = 30,
-			},
-		})
+	opts = {
+		window = {
+			width = 30,
+		},
+	},
+	conifg = function(_, opts)
+		require("neo-tree").setup(opts)
 	end,
 }
