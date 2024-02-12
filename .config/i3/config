@@ -45,8 +45,8 @@ bindsym $mod+Shift+l move right
 # horizontal split, vertical split is default: $mod+v
 bindsym $mod+s split h
 # Window variables
-set $ws1 "term"
-set $ws2 "web"
+set $ws1 "1"
+set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
