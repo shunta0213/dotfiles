@@ -9,6 +9,10 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 		},
 	},
+	keys = {
+		{ mode = "n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go definitions" },
+		{ mode = "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go definitions" },
+	},
 	---@class PluginLspOpts
 	opts = {
 		-- options for vim.diagnostic.config()
