@@ -14,14 +14,10 @@ esac
 # pnpm end
 
 # flutter
-export PATH="$PATH:/Users/shuntaide/Documents/flutter/bin"
-export PATH="$PATH:/Users/shuntaide/Library/Python/3.9/bin"
+export PATH="$PATH:$HOME/flutter/bin"
 
 # go
-export PATH="$PATH:/Users/shuntaide/go/bin"
-
-# local host ip
-export LOCAL_HOST_IP=`ifconfig en0 | grep inet | grep -v inet6 | sed -E "s/inet ([0-9]{1,3}.[0-9]{1,3}.[0-9].{1,3}.[0-9]{1,3}) .*$/\1/" | tr -d "\t"`
+export PATH="$PATH:$HOME/go/bin"
 
 # nvm
 [ -f "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
@@ -30,14 +26,19 @@ export LOCAL_HOST_IP=`ifconfig en0 | grep inet | grep -v inet6 | sed -E "s/inet 
 [ -e "${HOME}/.aliases" ] && source "${HOME}/.aliases"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/shuntaide/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shuntaide/Documents/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/Documents/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Documents/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/shuntaide/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shuntaide/Documents/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/Documents/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Documents/google-cloud-sdk/completion.zsh.inc"; fi
 
 
 # fuzzy find
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [[ $(uname) == "Linux" ]]; then
+  # maybe for ubuntu
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+elif [[ $(uname) == "darwin" ]]; then
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fi
 
 # prompt
 promptinit
@@ -55,7 +56,15 @@ setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%
 \$ '
 
 # anyenv
+if [[ $(uname) == "Linux" ]]; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+fi
 eval "$(anyenv init -)"
 
 # poetry
 export PATH="${HOME}/.local/bin:$PATH"
+
+# local host ip
+if [[ $(uname) == "darwin" ]]; then
+  export LOCAL_HOST_IP=`ifconfig en0 | grep inet | grep -v inet6 | sed -E "s/inet ([0-9]{1,3}.[0-9]{1,3}.[0-9].{1,3}.[0-9]{1,3}) .*$/\1/" | tr -d "\t"`
+fi
