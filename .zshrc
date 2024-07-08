@@ -14,7 +14,7 @@ esac
 # pnpm end
 
 # flutter
-export PATH="$PATH:$HOME/flutter/bin"
+export PATH="$PATH:$HOME/Documents/flutter/bin"
 
 # go
 export PATH="$PATH:$HOME/go/bin"
@@ -68,3 +68,14 @@ export PATH="${HOME}/.local/bin:$PATH"
 if [[ $(uname) == "darwin" ]]; then
   export LOCAL_HOST_IP=`ifconfig en0 | grep inet | grep -v inet6 | sed -E "s/inet ([0-9]{1,3}.[0-9]{1,3}.[0-9].{1,3}.[0-9]{1,3}) .*$/\1/" | tr -d "\t"`
 fi
+
+# homebrew
+export PATH=/opt/homebrew/bin:$PATH
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/shuntaide/.dart-cli-completion/zsh-config.zsh ]] && . /Users/shuntaide/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+# dart
+export PATH="$PATH":"$HOME/.pub-cache/bin"
