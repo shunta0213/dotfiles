@@ -3,7 +3,7 @@ return {
 	lazy = false,
 	priority = 1000,
 	opts = {
-		style = "",
+		style = "moon", -- moon, storm, night, day
 		transparent = true,
 		-- Telescope
 		on_highlights = function(hl, c)
