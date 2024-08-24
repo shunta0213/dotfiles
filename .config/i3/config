@@ -15,7 +15,6 @@ set $mod Mod1
 # My Configs
 #
 # font
-font pango:DejaVu Sans Mono 8
 # nitrogen
 exec_always --no-startup-id nitrogen --restore
 # picom
@@ -23,7 +22,7 @@ exec_always --no-startup-id picom -b
 # xmodmap
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 # fcitx
-exec --no-startup-id fcitx 
+exec --no-startup-id fcitx
 # clipboard
 exec --no-startup-id greenclip daemon>>/dev/null
 bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard

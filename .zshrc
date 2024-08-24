@@ -75,7 +75,14 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/shuntaide/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shuntaide/Documents/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "${HOME}/Documents/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/Documents/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/shuntaide/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shuntaide/Documents/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "${HOME}/Documents/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/Documents/google-cloud-sdk/completion.zsh.inc"; fi
+
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# End of lines configured by zsh-newuser-install
