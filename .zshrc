@@ -25,12 +25,6 @@ export PATH="$PATH:$HOME/go/bin"
 # aliases
 [ -e "${HOME}/.aliases" ] && source "${HOME}/.aliases"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/Documents/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Documents/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/Documents/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Documents/google-cloud-sdk/completion.zsh.inc"; fi
-
 
 # fuzzy find
 if [[ $(uname) == "Linux" ]]; then
@@ -79,3 +73,9 @@ export PATH=/opt/homebrew/bin:$PATH
 
 # dart
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/shuntaide/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shuntaide/Documents/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/shuntaide/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shuntaide/Documents/google-cloud-sdk/completion.zsh.inc'; fi
